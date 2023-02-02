@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-12 text-end">
+    <button type="button" class="btn btn-success" (click)="addAdmin()">
+      + Add Admin
+    </button>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Admin Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of data; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ d.email }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="deleteAdmin(d.email)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

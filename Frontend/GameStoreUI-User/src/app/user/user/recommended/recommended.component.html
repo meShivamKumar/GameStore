@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <hr />
+  <h2>Recommended Games</h2>
+  <div class="row">
+    <div class="col-6 col-sm-4 col-md-3" *ngFor="let d of data">
+      <div class="card" style="width: 12rem" (click)="viewGame(d.gameId)">
+        <img src="{{ d.gameImage }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h6 class="card-text text-center">{{ d.gameName }}</h6>
+          <p class="card-text text-center">
+            Rating-{{ d.rating }}<span class="fa fa-star checked"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

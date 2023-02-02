@@ -1,0 +1,12 @@
+C:\Projects\Assignment\GameModels\bin\Debug\net6.0\Game.Models.deps.json
+C:\Projects\Assignment\GameModels\bin\Debug\net6.0\Game.Models.dll
+C:\Projects\Assignment\GameModels\bin\Debug\net6.0\Game.Models.pdb
+C:\Projects\Assignment\GameModels\obj\Debug\net6.0\Game.Models.csproj.AssemblyReference.cache
+C:\Projects\Assignment\GameModels\obj\Debug\net6.0\Game.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Assignment\GameModels\obj\Debug\net6.0\Game.Models.AssemblyInfoInputs.cache
+C:\Projects\Assignment\GameModels\obj\Debug\net6.0\Game.Models.AssemblyInfo.cs
+C:\Projects\Assignment\GameModels\obj\Debug\net6.0\Game.Models.csproj.CoreCompileInputs.cache
+C:\Projects\Assignment\GameModels\obj\Debug\net6.0\Game.Models.dll
+C:\Projects\Assignment\GameModels\obj\Debug\net6.0\refint\Game.Models.dll
+C:\Projects\Assignment\GameModels\obj\Debug\net6.0\Game.Models.pdb
+C:\Projects\Assignment\GameModels\obj\Debug\net6.0\ref\Game.Models.dll

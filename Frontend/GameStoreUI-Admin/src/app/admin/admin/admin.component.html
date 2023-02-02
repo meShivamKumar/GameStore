@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-lg bg-body-light navbar-light bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#">
+      <img
+        src="assets/icon.png"
+        alt="Logo"
+        width="35"
+        height="35"
+        class="d-inline-block align-text-top"
+      />
+      Game Store Admin
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active text-light"
+            aria-current="page"
+            routerLink="users"
+            routerLinkActive="true"
+            >Users</a
+          >
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-light"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Games
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="games">View Games</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="add-game">Add Game</a>
+            </li>
+            <!-- <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="query">User Queries</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-light"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Admin
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="admins">All Admins</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="change-password"
+                >Change Your Password</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav mb-0 mb-lg-0 d-flex">
+        <li class="nav-item">
+          <a class="nav-link text-light" (click)="signOut()">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="bg-primary text-center">
+  <p class="text-light">@Shivam</p>
+</footer>

@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg bg-body-light navbar-light bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#">
+      <img
+        src="assets/icon.png"
+        alt="Logo"
+        width="35"
+        height="35"
+        class="d-inline-block align-text-top"
+      />
+      Game Store
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="profile" *ngIf="loggedIn"
+            >Profile</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="query" *ngIf="loggedIn"
+            >Contact</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" *ngIf="loggedIn" (click)="signOut()"
+            >Sign Out</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" *ngIf="!loggedIn" (click)="login()"
+            >Sign In</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<top-nav></top-nav>
+<div class="row searchBar">
+  <div class="col-12 col-md-12 text-center">
+    Search
+    <input
+      type="text"
+      #name
+      class="input"
+      placeholder="search by name"
+      (keyup)="search(name.value)"
+    />
+  </div>
+</div>
+<router-outlet></router-outlet>
+<footer class="bg-primary text-center">
+  <p class="text-light">@Shivam</p>
+</footer>

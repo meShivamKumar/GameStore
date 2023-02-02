@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-6">
+    <button type="button" class="btn btn-dark" (click)="back()">Back</button>
+  </div>
+</div>
+<div class="mb-3 row text-center">
+  <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="email@example.com"
+      [(ngModel)]="data.email"
+    />
+  </div>
+</div>
+<div class="mb-3 row text-center">
+  <label for="inputPassword" class="col-sm-2 col-form-label"
+    >Temp Password</label
+  >
+  <div class="col-sm-10">
+    <input
+      type="password"
+      class="form-control"
+      id="inputPassword"
+      [(ngModel)]="data.pass"
+    />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <button type="button" class="btn btn-primary" (click)="addAdmin()">
+      Add
+    </button>
+  </div>
+</div>

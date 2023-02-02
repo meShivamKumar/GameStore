@@ -1,0 +1,20 @@
+
+  img {
+    width: 10rem;
+    height: 10rem;
+  }
+.checked {
+  color: orange;
+}
+
+.pagination {
+  display: grid;
+  place-items: center;
+}
+
+@media  (min-width:240px) and (max-width:768px) {
+  img {
+    width: 5rem;
+    height: 5rem;
+  }
+}

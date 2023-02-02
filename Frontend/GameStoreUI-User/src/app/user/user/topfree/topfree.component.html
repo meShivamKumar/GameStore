@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <hr />
+  <h3>Top Free</h3>
+  <table class="table">
+    <tbody>
+      <tr
+        *ngFor="let d of data; let i = index"
+        class="row"
+        (click)="viewGame(d.gameId)"
+      >
+        <th scope="row" class="col-4  col-md-4">
+          <img src="{{ d.gameImage }}" alt="" />
+        </th>
+        <td class="col-4 col-md-4 text-center">
+          <h5>{{ d.gameName }}</h5>
+        </td>
+        <td class="col-4 col-md-4 text-center">
+          {{ d.rating }}
+          <span class="fa fa-star checked"></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

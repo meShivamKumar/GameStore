@@ -1,0 +1,213 @@
+<div class="row">
+  <div class="col-4 col-md-4 text-start">
+    <button type="button" class="btn btn-secondary" (click)="back()">
+      Back
+    </button>
+  </div>
+  <div class="col-8 col-md-8 text-end">
+    <button type="button" class="btn btn-{{ color }}" (click)="edit()">
+      {{ text }}
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-danger"
+      data-bs-toggle="modal"
+      data-bs-target="#deleteModal"
+    >
+      Delete
+    </button>
+  </div>
+</div>
+<div class="container-fluid">
+  <form class="row g-3" [formGroup]="form">
+    <div class="text-center" *ngIf="data.gameImage && !isEditing">
+      <img src="{{ data.gameImage }}" />
+    </div>
+    <div *ngIf="isEditing">
+      <div class="text-center col-md-12">
+        <img class="image" [src]="localUrl" *ngIf="localUrl" />
+      </div>
+      <div class="text-center col-md-12">
+        <input type="file" (change)="showPreviewImage($event)" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Game Id</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="gameId"
+        value="{{ data.gameId }}"
+        readOnly
+      />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Game Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="gameName"
+        value="{{ data.gameName }}"
+        [readOnly]="!isEditing"
+      />
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        aria-label="With textarea"
+        formControlName="gameDesc"
+        value="{{ data.gameDesc }}"
+        [readOnly]="!isEditing"
+      ></textarea>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Downloads</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="downloads"
+        value="{{ data.downloads }}"
+        [readOnly]="!isEditing"
+      />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Rated for Age</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="ratedAge"
+        value="{{ data.ratedAge }}+"
+        [readOnly]="!isEditing"
+      />
+    </div>
+    <div class="col-12">
+      <label class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="price"
+        value="{{ data.price }}"
+        [readOnly]="!isEditing"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">Download Link</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputCity"
+        formControlName="downloadLink"
+        value="{{ data.downloadLink }}"
+        [readOnly]="!isEditing"
+      />
+    </div>
+    <div class="col-md-3">
+      <label for="inputState" class="form-label">Top Chart Game</label>
+      <select
+        id="inputState"
+        class="form-select"
+        formControlName="topchart"
+        [value]="data.topchart"
+      >
+        <option value="false">False</option>
+        <option value="true">true</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="inputZip" class="form-label">Recommended Game</label>
+      <select
+        id="inputState"
+        class="form-select"
+        formControlName="recommended"
+        [value]="data.recommended"
+      >
+        <option value="false">False</option>
+        <option value="true">true</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">Category</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputCity"
+        formControlName="category"
+        value="{{ data.category }}"
+        [readOnly]="!isEditing"
+      />
+    </div>
+    <div class="col-md-3">
+      <label for="inputState" class="form-label">Overall Rating</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputCity"
+        formControlName="rating"
+        value="{{ data.rating }}"
+        [readOnly]="!isEditing"
+      />
+    </div>
+    <div class="col-md-3">
+      <label for="inputZip" class="form-label">Popular Game</label>
+      <select
+        id="inputState"
+        class="form-select"
+        formControlName="popular"
+        [value]="data.popular"
+      >
+        <option value="false">False</option>
+        <option value="true">true</option>
+      </select>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <button
+          type="button"
+          class="btn btn-warning"
+          *ngIf="isEditing"
+          (click)="updateGame()"
+        >
+          Update
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  aria-labelledby="deleteModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete?</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Are You Sure Want To Delete {{ gameName }}?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          (click)="deleteGame()"
+        >
+          Yes,Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

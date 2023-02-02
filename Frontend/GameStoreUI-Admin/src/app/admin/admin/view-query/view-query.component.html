@@ -1,0 +1,99 @@
+<div class="row">
+  <div class="col-md-6">
+    <button type="button" class="btn btn-dark" (click)="back()">Back</button>
+  </div>
+  <div class="col-md-6 text-end">
+    <button
+      type="button"
+      class="btn btn-{{ color }}"
+      (click)="toggleReply()"
+      [disabled]="alreadyReplied"
+    >
+      {{ btnText }}
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="deleteQuery(data.userEmail)"
+    >
+      Delete
+    </button>
+  </div>
+</div>
+<div class="text-center">
+  <h2>User Query</h2>
+  <hr />
+</div>
+<div class="text-left"></div>
+<div class="row text-start">
+  <div class="col">
+    <label for="email"><h4>By User</h4></label>
+    <input
+      type="text"
+      class="form-control text-start"
+      placeholder="userEmail"
+      aria-label="Email"
+      readonly
+      value="{{ data.userEmail }}"
+    />
+  </div>
+</div>
+
+<div class="row text-center">
+  <div class="col">
+    <label for="name" class=""><h4>Title</h4></label>
+    <input
+      type="text"
+      class="form-control text-center"
+      placeholder="query title"
+      aria-label="name"
+      value="{{ data.title }}"
+      readonly
+    />
+  </div>
+</div>
+<div class="col-12">
+  <label for="inputAddress" class="form-label"
+    ><h4>Description Message</h4></label
+  >
+  <textarea
+    class="form-control"
+    aria-label="With textarea"
+    value="{{ data.message }}"
+    readonly
+  ></textarea>
+</div>
+<div *ngIf="alreadyReplied">
+  <div class="row">
+    <label for="inputAddress" class="form-label"
+      ><h4>Replied Message</h4></label
+    >
+    <div class="col-md-12">
+      <textarea
+        class="form-control"
+        aria-label="With textarea"
+        value="{{ data.reply }}"
+        readonly
+      ></textarea>
+    </div>
+  </div>
+</div>
+<div *ngIf="isReplying">
+  <div class="row">
+    <label for="inputAddress" class="form-label"><h4>Reply User</h4></label>
+    <div class="col-md-12">
+      <textarea
+        class="form-control"
+        aria-label="With textarea"
+        [(ngModel)]="reply.reply"
+      ></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button type="button" class="btn btn-warning" (click)="replyUser()">
+        Reply
+      </button>
+    </div>
+  </div>
+</div>

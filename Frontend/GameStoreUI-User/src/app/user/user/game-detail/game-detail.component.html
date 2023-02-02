@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <hr />
+  <div class="row">
+    <div class="col-md-5 col-6">
+      <img src="{{ data.gameImage }}" alt="" />
+    </div>
+    <div class="col-md-5 col-4">
+      <h3>{{ data.gameName }}</h3>
+    </div>
+    <div class="col-md-2 col-2">
+      <h3>{{ data.rating }}<span class="fa fa-star checked"></span></h3>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-12"><h4>Description</h4></div>
+    <div class="col-md-12">{{ data.gameDesc }}</div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" *ngIf="!installed">
+      <button
+        type="button"
+        class="btn btn-success"
+        (click)="downloadGame(data.gameId)"
+      >
+        <h3>Download</h3>
+      </button>
+    </div>
+    <div class="col-md-12" *ngIf="installed">
+      <button type="button" class="btn btn-warning" disabled>
+        <h3>
+          Installed<i
+            class="fa fa-check"
+            style="font-size: 48px; color: green"
+          ></i>
+        </h3>
+      </button>
+    </div>
+  </div>
+
+  <top-chart></top-chart>
+  <gs-topfree></gs-topfree>
+</div>

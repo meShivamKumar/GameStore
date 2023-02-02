@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-12"><button type="button" class="btn btn-dark" (click)="back()">Back</button></div>
+  <div class="col-md-12 text-center"><img src="assets/icon.png" /></div>
+  <div class="col-md-12 text-center">
+    <h1>Login To Unlock Other Features</h1>
+  </div>
+</div>
+<form *ngIf="!userExist">
+  <div class="main">
+    <div class="form-outline mb-4">
+      <input
+        type="email"
+        id="form2Example1"
+        class="form-control"
+        [(ngModel)]="data.userEmail"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <label class="form-label" for="form2Example1">Email address</label>
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary btn-block mb-4"
+      (click)="checkValidity()"
+    >
+      Sign in
+    </button>
+    <button
+      type="button"
+      class="btn btn-warning btn-block mb-4"
+      (click)="toggleExist()"
+    >
+      Register
+    </button>
+  </div>
+</form>
+
+<form *ngIf="userExist">
+  <div class="main">
+    <div class="form-outline mb-4">
+      <input
+        type="email"
+        id="form2Example1"
+        class="form-control"
+        [(ngModel)]="data.userEmail"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <label class="form-label" for="form2Example1">Email address</label>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        id="form2Example2"
+        class="form-control"
+        [(ngModel)]="data.userName"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <label class="form-label" for="form2Example2">User Name</label>
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary btn-block mb-4"
+      (click)="addUser()"
+    >
+      Register
+    </button>
+    <button
+      type="button"
+      class="btn btn-warning btn-block mb-4"
+      (click)="toggleExist()"
+    >
+      Already User? Sign In
+    </button>
+  </div>
+</form>

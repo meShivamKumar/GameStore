@@ -1,0 +1,57 @@
+<div class="text-center">
+  <h3>My Profile</h3>
+  <hr />
+</div>
+<div class="text-left"></div>
+<div class="row text-center">
+  <div class="col">
+    <label for="email"><h6>Email</h6></label>
+    <input
+      type="text"
+      class="form-control text-center"
+      placeholder="Email"
+      aria-label="Email"
+      readonly
+      value="{{ data.userEmail }}"
+    />
+  </div>
+  <div class="col">
+    <label for="name" class=""><h6>Name</h6></label>
+    <input
+      type="text"
+      class="form-control text-center"
+      placeholder="name"
+      aria-label="name"
+      value="{{ data.userName }}"
+      readonly
+    />
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col">
+    <h4 for="name">My Installed Games</h4>
+    <hr />
+  </div>
+</div>
+<div class="container-fluid">
+<table class="table">
+  <tbody>
+    <tr
+      *ngFor="let d of data.games; let i = index"
+      class="row"
+      (click)="viewGame(d.gameId)"
+    >
+      <th scope="row" class="col-4 col-md-4">
+        <img src="{{ d.gameImage }}" alt="" />
+      </th>
+      <td class="col-4 col-md-4 text-center">
+        <h5>{{ d.gameName }}</h5>
+      </td>
+      <td class="col-4 col-md-4 text-center">
+        {{ d.rating }}
+        <span class="fa fa-star checked"></span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

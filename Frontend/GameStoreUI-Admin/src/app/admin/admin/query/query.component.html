@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">By User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of data; let i = index" (click)="viewQuery(d.userEmail)">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ d.title }}</td>
+      <td>{{ d.userEmail }}</td>
+    </tr>
+  </tbody>
+</table>

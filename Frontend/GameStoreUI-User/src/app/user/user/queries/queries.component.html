@@ -1,0 +1,88 @@
+<div *ngIf="data">
+  <div class="row">
+    <div class="col-md-6">
+      <button type="button" class="btn btn-dark" (click)="back()">Back</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center text-danger">
+      You can again raise query once reply is recieved and admin deletes this
+      query.
+    </div>
+  </div>
+  <div class="text-center">
+    <h2>Your Query</h2>
+    <hr />
+  </div>
+  <div class="text-left"></div>
+  <div class="row text-start">
+    <div class="col">
+      <label for="email"><h4>Your Email</h4></label>
+      <input
+        type="text"
+        class="form-control text-start"
+        placeholder="userEmail"
+        aria-label="Email"
+        readonly
+        value="{{ data.userEmail }}"
+      />
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col">
+      <label for="name" class=""><h4>Title</h4></label>
+      <input
+        type="text"
+        class="form-control text-center"
+        placeholder="query title"
+        aria-label="name"
+        value="{{ data.title }}"
+        readonly
+      />
+    </div>
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label"
+      ><h4>Sent Description Message</h4></label
+    >
+    <textarea
+      class="form-control"
+      aria-label="With textarea"
+      value="{{ data.message }}"
+      readonly
+    ></textarea>
+  </div>
+  <div *ngIf="!data.reply" class="text-center">
+    <label for="inputAddress" class="form-label"
+      ><h4>No Reply Recieved</h4></label
+    >
+  </div>
+  <div *ngIf="data.reply">
+    <div class="row">
+      <label for="inputAddress" class="form-label"
+        ><h4>Replied Message</h4></label
+      >
+      <div class="col-md-12">
+        <textarea
+          class="form-control"
+          aria-label="With textarea"
+          value="{{ data.reply }}"
+          readonly
+        ></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!data">
+  <div class="row">
+    <div class="col-12 col-md-12 text-end">
+      <button type="button" class="btn btn-primary" (click)="addQuery()">
+        Add Query
+      </button>
+    </div>
+    <div class="col text-center text-danger">
+      No Queries Found. You can Raise a new from the top right corner button
+    </div>
+  </div>
+</div>

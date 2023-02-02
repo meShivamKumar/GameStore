@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <table class="table">
+    <tbody>
+      <tr
+        *ngFor="
+          let d of data.games
+            | paginate
+              : {
+                  itemsPerPage: size,
+                  currentPage: pageNumber,
+                  totalItems: totalElements
+                };
+          let i = index
+        "
+        class="row"
+        (click)="viewGame(d.gameId)"
+      >
+        <th scope="row" class="col-4 col-md-4">
+          <img src="{{ d.gameImage }}" alt="" />
+        </th>
+        <td class="col-4 col-md-4 text-center">
+          <h5>{{ d.gameName }}</h5>
+        </td>
+        <td class="col-4 col-md-4 text-center">
+          {{ d.rating }}
+          <span class="fa fa-star checked"></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination" *ngIf="!isCategory && !isSearching">
+    <pagination-controls (pageChange)="getByPage($event)">
+    </pagination-controls>
+  </div>
+  <div class="pagination" *ngIf="isSearching && !isCategory">
+    <pagination-controls (pageChange)="searchGame($event)">
+    </pagination-controls>
+  </div>
+  <div class="pagination" *ngIf="isCategory && !isSearching">
+    <pagination-controls (pageChange)="getByCategoryPage($event)">
+    </pagination-controls>
+  </div>
+</div>

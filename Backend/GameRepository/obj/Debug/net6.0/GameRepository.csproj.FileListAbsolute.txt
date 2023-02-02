@@ -1,0 +1,14 @@
+C:\Projects\Assignment\GameRepository\bin\Debug\net6.0\GameRepository.deps.json
+C:\Projects\Assignment\GameRepository\bin\Debug\net6.0\GameRepository.dll
+C:\Projects\Assignment\GameRepository\bin\Debug\net6.0\GameRepository.pdb
+C:\Projects\Assignment\GameRepository\obj\Debug\net6.0\GameRepository.csproj.AssemblyReference.cache
+C:\Projects\Assignment\GameRepository\obj\Debug\net6.0\GameRepository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Assignment\GameRepository\obj\Debug\net6.0\GameRepository.AssemblyInfoInputs.cache
+C:\Projects\Assignment\GameRepository\obj\Debug\net6.0\GameRepository.AssemblyInfo.cs
+C:\Projects\Assignment\GameRepository\obj\Debug\net6.0\GameRepository.csproj.CoreCompileInputs.cache
+C:\Projects\Assignment\GameRepository\obj\Debug\net6.0\GameRepository.dll
+C:\Projects\Assignment\GameRepository\obj\Debug\net6.0\refint\GameRepository.dll
+C:\Projects\Assignment\GameRepository\obj\Debug\net6.0\GameRepository.pdb
+C:\Projects\Assignment\GameRepository\obj\Debug\net6.0\ref\GameRepository.dll
+C:\Projects\Assignment\GameRepository\bin\Debug\net6.0\GameRepository.runtimeconfig.json
+C:\Projects\Assignment\GameRepository\obj\Debug\net6.0\GameRepository.genruntimeconfig.cache

@@ -1,0 +1,39 @@
+<div class="container-fluid topNav screenNav">
+  <div class="row text-center">
+    <div class="col-auto col-md-auto">
+      <a class="text-dark" routerLink="home"
+        ><h5><i class="fa fa-home"></i>Home</h5></a
+      >
+    </div>
+    <div class="col-auto col-md-auto">
+      <a
+        class="text-dark"
+        (click)="viewGameList('all')"
+        (click)="sendData('all')"
+        ><h5>All</h5>
+      </a>
+    </div>
+    <div class="col-auto col-md-auto" *ngFor="let c of category">
+      <a class="text-dark" (click)="viewGameList(c)" (click)="sendData(c)"
+        ><h5>{{ c }}</h5></a
+      >
+    </div>
+  </div>
+</div>
+<div class="container-fluid topNav dropdown">
+  <div class="row">
+    <div class="dropdown">
+    <div class="col-12 col-xs">
+  <select name="dropdown" id="mySelect"  [(ngModel)]="value" (click)="check()">
+    <option routerLink="home" value="Home">Home</option>
+    <option  value="all" 
+    >All</option>
+    <option class="col-12" value="{{c}}" *ngFor="let c of category">
+      {{ c }}
+    </option>
+  </select>
+  </div>
+</div>
+</div>
+  </div>
+

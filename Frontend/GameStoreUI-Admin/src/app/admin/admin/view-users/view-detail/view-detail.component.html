@@ -1,0 +1,54 @@
+<div class="text-center">
+  <h3>User Details</h3>
+  <hr />
+</div>
+<div class="text-left"></div>
+<div class="row text-center">
+  <div class="col">
+    <label for="email"><h6>Email</h6></label>
+    <input
+      type="text"
+      class="form-control text-center"
+      placeholder="Email"
+      aria-label="Email"
+      readonly
+      value="{{ data.userEmail }}"
+    />
+  </div>
+  <div class="col">
+    <label for="name" class=""><h6>Name</h6></label>
+    <input
+      type="text"
+      class="form-control text-center"
+      placeholder="name"
+      aria-label="name"
+      value="{{ data.userName }}"
+      readonly
+    />
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col">
+    <h4 for="name">Installed Games</h4>
+    <hr />
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let d of data.games; let i = index"
+      (click)="viewGame(d.gameId)"
+    >
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ d.gameName }}</td>
+      <td>{{ d.rating }}</td>
+    </tr>
+  </tbody>
+</table>

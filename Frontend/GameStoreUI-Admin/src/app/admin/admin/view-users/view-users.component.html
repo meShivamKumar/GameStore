@@ -1,0 +1,80 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let d of data.users
+          | paginate
+            : {
+                itemsPerPage: size,
+                currentPage: pageNumber,
+                totalItems: totalElements
+              };
+        let i = index
+      "
+    >
+      <th scope="row" (click)="viewUser(d.userEmail)">{{ i + 1 }}</th>
+      <td (click)="viewUser(d.userEmail)">{{ d.userName }}</td>
+      <td (click)="viewUser(d.userEmail)">{{ d.userEmail }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="setUser(d.userEmail, d.userName)"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteModal"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="pagination">
+  <pagination-controls (pageChange)="getData($event)"> </pagination-controls>
+</div>
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  aria-labelledby="deleteModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete?</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        Are You Sure Want To Delete User {{ userName }}?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          (click)="deleteUser()"
+        >
+          Yes,Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

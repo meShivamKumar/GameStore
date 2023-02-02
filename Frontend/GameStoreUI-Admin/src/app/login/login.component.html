@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12 text-center"><img src="assets/icon.png" /></div>
+  <div class="col-md-12 text-center"><h1>Welcome To Game Store Admin</h1></div>
+</div>
+<form>
+  <div class="main">
+    <div class="form-outline mb-4">
+      <input
+        type="email"
+        id="form2Example1"
+        class="form-control"
+        [(ngModel)]="data.email"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <label class="form-label" for="form2Example1">Email address</label>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="password"
+        id="form2Example2"
+        class="form-control"
+        [(ngModel)]="data.pass"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <label class="form-label" for="form2Example2">Password</label>
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary btn-block mb-4"
+      (click)="checkValidity()"
+    >
+      Sign in
+    </button>
+  </div>
+</form>

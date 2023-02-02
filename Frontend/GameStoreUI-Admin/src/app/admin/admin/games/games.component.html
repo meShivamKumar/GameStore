@@ -1,0 +1,78 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Rating</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let d of data.games
+          | paginate
+            : {
+                itemsPerPage: size,
+                currentPage: pageNumber,
+                totalItems: totalElements
+              };
+        let i = index
+      "
+    >
+      <th scope="row" (click)="viewGame(d.gameId)">{{ i + 1 }}</th>
+      <td (click)="viewGame(d.gameId)">{{ d.gameName }}</td>
+      <td (click)="viewGame(d.gameId)">{{ d.rating }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteModal"
+          (click)="setData(d.gameId, d.gameName)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="pagination">
+  <pagination-controls (pageChange)="getGames($event)"> </pagination-controls>
+</div>
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  aria-labelledby="deleteModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete?</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Are You Sure Want To Delete {{ gameName }}?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          (click)="deleteGame()"
+        >
+          Yes,Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

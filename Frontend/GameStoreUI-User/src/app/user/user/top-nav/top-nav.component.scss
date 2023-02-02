@@ -1,0 +1,25 @@
+.topNav{
+
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.dropdown{
+display: none;
+}
+select {
+    width: 100%;
+}
+@media (min-width:240px) and (max-width:720px){
+    .screenNav{
+        display: none;
+    }
+    .dropdown{
+        display: flex;
+        width: 100vw;
+        }  
+}

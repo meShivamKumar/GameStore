@@ -1,0 +1,107 @@
+<div class="container-fluid box">
+<form class="row g-3" [formGroup]="form">
+  <div class="text-center col-md-12">
+    <img class="image" [src]="localUrl" *ngIf="localUrl" />
+  </div>
+  <div class="text-center col-md-12">
+    <input type="file" (change)="showPreviewImage($event)" />
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Game Id</label>
+    <input type="text" class="form-control" formControlName="gameId" />
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Game Name</label>
+    <input type="text" class="form-control" formControlName="gameName" />
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Description</label>
+    <textarea
+      class="form-control"
+      aria-label="With textarea"
+      formControlName="gameDesc"
+    ></textarea>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Downloads</label>
+    <input type="text" class="form-control" formControlName="downloads" />
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Rated for Age</label>
+    <input type="text" class="form-control" formControlName="ratedAge" />
+  </div>
+  <div class="col-12">
+    <label class="form-label">Price</label>
+    <input type="text" class="form-control" value="0" formControlName="price" />
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">Download Link</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputCity"
+      formControlName="downloadLink"
+    />
+  </div>
+  <div class="col-md-3">
+    <label for="inputState" class="form-label">Top Chart Game</label>
+    <select
+      id="inputState"
+      class="form-select"
+      value="false"
+      formControlName="topchart"
+    >
+      <option value="false">False</option>
+      <option value="true">true</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label for="inputZip" class="form-label">Recommended Game</label>
+    <select
+      id="inputState"
+      class="form-select"
+      value="false"
+      formControlName="recommended"
+    >
+      <option value="false">False</option>
+      <option value="true">true</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">Category</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputCity"
+      placeholder="eg. Arcade"
+      formControlName="category"
+    />
+  </div>
+  <div class="col-md-3">
+    <label for="inputState" class="form-label">Overall Rating</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputCity"
+      formControlName="rating"
+    />
+  </div>
+  <div class="col-md-3">
+    <label for="inputZip" class="form-label">Popular Game</label>
+    <select
+      id="inputState"
+      class="form-select"
+      value="false"
+      formControlName="popular"
+    >
+      <option value="false">False</option>
+      <option value="true">true</option>
+    </select>
+  </div>
+  <div class="col-md-12 text-center button">
+    <button type="button" class="btn btn-primary" (click)="publishGame()">
+      Submit
+    </button>
+  </div>
+</form>
+</div>
